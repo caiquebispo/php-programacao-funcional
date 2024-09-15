@@ -1,5 +1,7 @@
 <?php
 
+$variavel = "Isso é uma variavel que está no escopo exeterno do programa";
+
 function outraFuncao(callable $fn)
 {
 
@@ -7,7 +9,7 @@ function outraFuncao(callable $fn)
     echo $fn();
 }
 
-outraFuncao(function () {
+outraFuncao(function () use ($variavel) {
 
-    echo "Minha segunda funcao";
+    echo "Olá, eu estou usando uma variavél que está no contexto externo da minha aplicação por meio de uma closure " . $variavel;
 });
